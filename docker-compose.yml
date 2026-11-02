@@ -13,3 +13,4 @@ services:
       RABBITMQ_URL: "amqp://edupulse:change_me@host.docker.internal:5672"
     extra_hosts:
       - "host.docker.internal:host-gateway"
+
