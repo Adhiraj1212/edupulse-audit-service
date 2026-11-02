@@ -1,0 +1,15 @@
+services:
+  audit-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "6000:6000"
+    environment:
+      DB_HOST: "host.docker.internal"
+      DB_USER: "audit"
+      DB_PASSWORD: "change_me"
+      DB_DATABASE: "audit_db"
+      RABBITMQ_URL: "amqp://edupulse:change_me@host.docker.internal:5672"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
