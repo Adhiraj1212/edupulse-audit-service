@@ -74,6 +74,7 @@ async function consume() {
 
 const app = express();
 app.get("/health", (req, res) => res.json({ status: "ok" }));
+app.get("/healthz", (req, res) => res.json({ status: "ok" }));
 
 // nginx has already authenticated the caller and set X-User-Role.
 app.get("/api/audit", async (req, res) => {
